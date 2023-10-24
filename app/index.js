@@ -1,15 +1,16 @@
-// SafeAreaView = div tag and Text = p tag but in only react-native
+// View = div tag and Text = p tag but in only react-native
 import { View, ScrollView, SafeAreaView } from 'react-native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 // Expo router is similar to react-router
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../constants'
-import { NearbyJobs, Popularjobs, ScreenHeaderBtn, Welcome } from '../components'
+import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from '../components'
 
 const Home = () => {
     // Defines our router
     const router = useRouter();
+    
     return (
         // SafeAreaView allows you to show the content safely without any buttons appearing 
         // over it
@@ -20,19 +21,19 @@ const Home = () => {
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+                        <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%" />
+                        <ScreenHeaderBtn iconUrl={images.profile} dimension='100%' />
                     ),
                     // Prevents you from seeing the header on the screen
-                    headerTitle: ""
-                }} 
+                    headerTitle: "",
+                  }} 
                 />
 
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View 
-                    style={{ 
+                     style={{ 
                         flex: 1, 
                         padding: SIZES.medium
                     }}>

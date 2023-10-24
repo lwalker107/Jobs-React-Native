@@ -1,17 +1,16 @@
-import { Image, TouchableOpacity } from "react-native";
+import React from 'react'
+// In react native, a button is a touchable opacity
+import { TouchableOpacity, Image } from 'react-native'
 
-import styles from "./screenheader.style";
+import styles from './screenheader.style'
 
 const ScreenHeaderBtn = ({ iconUrl, dimension, handlePress }) => {
   return (
-    <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
-      <Image
-        source={iconUrl}
-        resizeMode='cover'
-        style={styles.btnImg(dimension)}
-      />
+    <TouchableOpacity>
+      <Image 
+        source={iconUrl} />
     </TouchableOpacity>
-  );
-};
+  )
+}
 
-export default ScreenHeaderBtn;
+export default ScreenHeaderBtn
